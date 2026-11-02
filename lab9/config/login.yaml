@@ -1,0 +1,5 @@
+base_url: http://shop2.qatl.ru/shop/
+login_page: http://shop2.qatl.ru/shop/user/login
+login: lur1x
+password: "123456789"
+success_message: "Вы успешно авторизованы"

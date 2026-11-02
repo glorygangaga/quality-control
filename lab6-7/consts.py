@@ -1,0 +1,1 @@
+MOCK_RATE_SERVICE_URL = "http://localhost:4545"

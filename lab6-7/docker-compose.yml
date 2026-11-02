@@ -1,0 +1,10 @@
+services:
+  mountebank:
+    image: bbyars/mountebank:latest
+    container_name: mountebank
+    ports:
+      - "2525:2525"   # admin API
+      - "4545:4545"   # наш mock-сервис курсов
+    volumes:
+      - ./mountebank:/mountebank
+    command: start --configfile /mountebank/imposters.json
