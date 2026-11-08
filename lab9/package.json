@@ -1,0 +1,19 @@
+{
+  "name": "lab9js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/selenium-webdriver": "^4.35.7",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "scripts": {
+    "test": "tsx --test tests/shop.test.ts"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.52.0",
+    "yaml": "^2.9.1"
+  }
+}

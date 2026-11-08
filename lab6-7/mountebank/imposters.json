@@ -1,0 +1,79 @@
+{
+  "imposters": [
+    {
+      "port": 4545,
+      "protocol": "http",
+      "name": "currency-rates-mock",
+      "stubs": [
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/currencies"}}],
+          "responses": [{
+            "is": {
+              "statusCode": 200,
+              "headers": {"Content-Type": "application/json"},
+              "body": ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "CNY", "INR", "RUB", "KRW", "BRL"]
+            }
+          }]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/USD"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "USD", "rate": 70.5}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/EUR"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "EUR", "rate": 80.2}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/GBP"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "GBP", "rate": 90.8}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/JPY"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "JPY", "rate": 0.64}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/AUD"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "AUD", "rate": 50.6}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/CAD"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "CAD", "rate": 55.3}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/CHF"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "CHF", "rate": 72.9}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/CNY"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "CNY", "rate": 10.2}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/INR"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "INR", "rate": 1.0}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/RUB"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "RUB", "rate": 1.0}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/KRW"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "KRW", "rate": 0.062}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET", "path": "/rates/BRL"}}],
+          "responses": [{"is": {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": {"code": "BRL", "rate": 13.4}}}]
+        },
+        {
+          "predicates": [{"equals": {"method": "GET"}}],
+          "responses": [{
+            "is": {
+              "statusCode": 404,
+              "headers": {"Content-Type": "application/json"},
+              "body": {"error": "Not found"}
+            }
+          }]
+        }
+      ]
+    }
+  ]
+}
